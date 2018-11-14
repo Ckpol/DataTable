@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div class="header">
+    <div class="choiceButtons">
+        <span class="span choiceButtons__span">Загрузка базы</span>
+        <button type="button" class="btn btn-primary my-2 my-sm-0 button choiceButtons__button_dataSmall">Small</button>
+        <button type="button" class="btn btn-primary my-2 my-sm-0 button choiceButtons__button_dataBig">Big</button>
+    </div>
+    <div class="search-form">
+        <nav class="navbar navbar-light bg-light nav search-form__nav">
+            <form class="form-inline form search-form__form">
+                <input class="form-control mr-sm-2 input search-form__input" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-primary my-2 my-sm-0 button search-form__button" type="button">Search</button>
+            </form>
+        </nav>
+    </div>
+    <div class="progress">
+        <div class="progress__circle progress__circle_01"></div>
+        <div class="progress__circle progress__circle_02"></div>
+        <div class="progress__circle progress__circle_03"></div>
+        <div class="progress__circle progress__circle_04"></div>
+        <div class="progress__circle progress__circle_05"></div>
+        <div class="progress__circle progress__circle_06"></div>
+        <div class="progress__circle progress__circle_07"></div>
+        <div class="progress__circle progress__circle_08"></div>
+    </div>
+</div>
+
+<div class="content">
+    <div class="data-table content__data-table">
+    </div>
+    <div class="navigation content__navigation">
+        <nav class="nav navigation__nav" aria-label="Page navigation example">
+            <ul class="pagination ul navigation__ul">
+                <li class="page-item li li__previous navigation__li navigation__li_previously"><a class="page-link" href="#">Previous</a></li>
+                <li class="page-item li li__item navigation__li navigation__li_1"><a class="page-link" data-position="1" href="#">1</a></li>
+                <li class="page-item li li__next navigation__li navigation__li_next"><a class="page-link" href="#">Next</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="description">
+        <p>Выбран пользователь:<span class="description__span description__span_user"></span></p>
+        <p>Описание:</p>
+        <p><span class="description__span description__span_description"></span></p>
+        <p>Адрес проживания:<span class="description__span description__span_streetAdress"></span></p>
+        <p>Город:<span class="description__span description__span_city"></span></p>
+        <p>Провинция/штат:<span class="description__span description__span_state"></span></p>
+        <p>Индекс:<span class="description__span description__span_zip"></span></p>
+
+
+    </div>
+
+</div>
+
+
+
+<script src="index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.min.js"></script>
+</body>
+</html>
