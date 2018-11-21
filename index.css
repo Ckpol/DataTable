@@ -15,11 +15,6 @@
     overflow: hidden;
 }
 
-.content,
-.search-form {
-    display:none;
-}
-
 .content__navigation.hidden {
     display:none;
 }
@@ -177,4 +172,15 @@ p {
 }
 textarea {
     width:70%;
+}
+
+.hidden {
+    display: none;
+}
+
+.flex {
+    display: flex;
+}
+.newColor {
+    background-color:rgb(191, 221, 245);
 }
