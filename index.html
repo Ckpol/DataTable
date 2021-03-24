@@ -1,54 +1,94 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./bootstrap-5.0.0-beta2-dist/css/bootstrap.css">
+    <title>Таблица данных</title>
 </head>
+
 <body>
-<div class="header">
-    <div class="choiceButtons">
-        <span class="span choiceButtons__span">Загрузка базы</span>
-        <button type="button" class="btn btn-primary my-2 my-sm-0 button choiceButtons__button_dataSmall">Small</button>
-        <button type="button" class="btn btn-primary my-2 my-sm-0 button choiceButtons__button_dataBig">Big</button>
-    </div>
-    <div class="search-form hidden">
-        <nav class="navbar navbar-light bg-light nav search-form__nav">
-            <form class="form-inline form search-form__form">
-                <input class="form-control mr-sm-2 input search-form__input" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-primary my-2 my-sm-0 button search-form__button" type="button">Search</button>
-            </form>
-        </nav>
-    </div>
-    <div class="progress">
-        <div class="progress__circle progress__circle_01"></div>
-        <div class="progress__circle progress__circle_02"></div>
-        <div class="progress__circle progress__circle_03"></div>
-        <div class="progress__circle progress__circle_04"></div>
-        <div class="progress__circle progress__circle_05"></div>
-        <div class="progress__circle progress__circle_06"></div>
-        <div class="progress__circle progress__circle_07"></div>
-        <div class="progress__circle progress__circle_08"></div>
-    </div>
-</div>
+  <header class="header hidden">
+  <div class="search-form">
+      <nav class="navbar navbar-light bg-light nav search-form__nav">
+          <form class="d-flex">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-primary my-2 my-sm-0" type="button">Search</button>
+          </form>
+      </nav>
+  </div>
+  </header>
 
-<div class="content hidden">
-    <div class="data-table content__data-table">
+  <main>
+    <section class="popup">
+      <div class="container popup_container">
+        <div class="row">
+          <span class="col">Загрузка базы</span>
+        </div>
+        <div class="row">
+          <button type="button" class="btn btn-primary btn-lg popup_dataSmall">Small</button>
+          <button type="button" class="btn btn-primary btn-lg popup_dataBig">Big</button>
+        </div>
     </div>
-    <div class="navigation content__navigation">
-        <nav class="nav navigation__nav" aria-label="Page navigation example">
-            <ul class="pagination ul navigation__ul">
-                <li class="page-item li li__previous navigation__li navigation__li_previously"><a class="page-link" href="#">Previous</a></li>
-                <li class="page-item li li__item navigation__li navigation__li_1"><a class="page-link" data-position="1" href="#">1</a></li>
-                <li class="page-item li li__next navigation__li navigation__li_next"><a class="page-link" href="#">Next</a></li>
-            </ul>
-        </nav>
-    </div>
-</div>
 
-<div class="footer">
-    <div class="description">
+    </section>
+
+    <section class="content hidden">
+
+      <div class="data-table content__data-table">
+        <!-- <table class="table table-hover">
+          <thead class="table-light">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">First</th>
+              <th scope="col">Last</th>
+              <th scope="col">Handle</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="table-active">
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td colspan="2">Larry the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </table> -->
+      </div>
+
+      <div class="navigation content__navigation">
+          <nav aria-label="Page navigation example">
+              <ul class="pagination">
+
+                  <li class="page-item page-item_previous disabled">
+                    <a class="page-link page-link_previous" href="#">Previous</a>
+                    <!-- aria-disabled="true" -->
+                  </li>
+
+                  <li class="page-item page-item_elem active">
+                    <a class="page-link" data-position="1" href="#">1</a>
+                  </li>
+
+                  <li class="page-item page-item_next li li__next navigation__li navigation__li_next">
+                    <a class="page-link page-link_next" href="#">Next</a>
+                  </li>
+              </ul>
+          </nav>
+      </div>
+
+      <div class="description hidden">
         <p>Выбран пользователь:<span class="description__span description__span_user"></span></p>
         <p>Описание:</p>
         <p><span class="description__span description__span_description"></span></p>
@@ -56,15 +96,23 @@
         <p>Город:<span class="description__span description__span_city"></span></p>
         <p>Провинция/штат:<span class="description__span description__span_state"></span></p>
         <p>Индекс:<span class="description__span description__span_zip"></span></p>
-
-
     </div>
+    </section>
+  </main>
 
-</div>
+  <article class="progress hidden">
+    <div class="progress__circle progress__circle_01"></div>
+    <div class="progress__circle progress__circle_02"></div>
+    <div class="progress__circle progress__circle_03"></div>
+    <div class="progress__circle progress__circle_04"></div>
+    <div class="progress__circle progress__circle_05"></div>
+    <div class="progress__circle progress__circle_06"></div>
+    <div class="progress__circle progress__circle_07"></div>
+    <div class="progress__circle progress__circle_08"></div>
+  </article>
 
-
-
-<script src="index.js"></script>
+<script src="./lodash.js"></script>
+<script src="./js/main.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.min.js"></script>
 </body>
 </html>
