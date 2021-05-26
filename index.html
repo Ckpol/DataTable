@@ -13,10 +13,24 @@
   <div class="search-form">
       <nav class="navbar navbar-light bg-light nav search-form__nav">
           <form class="d-flex">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-primary my-2 my-sm-0" type="button">Search</button>
-          </form>
-      </nav>
+              <input class="form-control mr-sm-2 search_input" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-primary my-2 my-sm-0 search_button" type="button">Поиск</button>
+              <button type="button" class="btn btn-outline-primary search_reset">Сброс</button>
+              <fieldset class="search-form__rows">
+                <label class="search-form__rows-label" for="rows-quantity">Элементов на странице</label>
+                <select id="rows-quantity" name="rows" class="form-select form-select-sm" aria-label="Default select example">
+                  <option value="10" selected>10</option>
+                  <option value="20">20</option>
+                  <option value="30">30</option>
+                  <option value="50">50</option>
+                </select>
+              </fieldset>
+            </form>
+          <div class="d-flex data_info">
+            <button type="button" class="btn btn-primary data_named" tooltip="">Загруженная база</button>
+            <button type="button" class="btn btn-danger data_reloaded">Выбрать новую базу</button>
+        </div>
+        </nav>
   </div>
   </header>
 
@@ -31,72 +45,22 @@
           <button type="button" class="btn btn-primary btn-lg popup_dataBig">Big</button>
         </div>
     </div>
-
     </section>
 
     <section class="content hidden">
-
-      <div class="data-table content__data-table">
-        <!-- <table class="table table-hover">
-          <thead class="table-light">
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">First</th>
-              <th scope="col">Last</th>
-              <th scope="col">Handle</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="table-active">
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td colspan="2">Larry the Bird</td>
-              <td>@twitter</td>
-            </tr>
-          </tbody>
-        </table> -->
-      </div>
-
+      <div class="data-table content__data-table"></div>
       <div class="navigation content__navigation">
           <nav aria-label="Page navigation example">
               <ul class="pagination">
-
                   <li class="page-item page-item_previous disabled">
                     <a class="page-link page-link_previous" href="#">Previous</a>
-                    <!-- aria-disabled="true" -->
                   </li>
-
-                  <li class="page-item page-item_elem active">
-                    <a class="page-link" data-position="1" href="#">1</a>
-                  </li>
-
-                  <li class="page-item page-item_next li li__next navigation__li navigation__li_next">
+                  <li class="page-item page-item_next">
                     <a class="page-link page-link_next" href="#">Next</a>
                   </li>
               </ul>
           </nav>
       </div>
-
-      <div class="description hidden">
-        <p>Выбран пользователь:<span class="description__span description__span_user"></span></p>
-        <p>Описание:</p>
-        <p><span class="description__span description__span_description"></span></p>
-        <p>Адрес проживания:<span class="description__span description__span_streetAdress"></span></p>
-        <p>Город:<span class="description__span description__span_city"></span></p>
-        <p>Провинция/штат:<span class="description__span description__span_state"></span></p>
-        <p>Индекс:<span class="description__span description__span_zip"></span></p>
-    </div>
     </section>
   </main>
 
@@ -111,11 +75,42 @@
     <div class="progress__circle progress__circle_08"></div>
   </article>
 
+  <template id="description">
+    <div class="description">
+      <button type="button" class="btn-close" aria-label="Close"></button>
+      <p>Выбран пользователь:<span class="description__userName"></span></p>
+      <p>Описание:</p>
+      <p><textarea rows="4" cols="75" class="description__text" readonly></textarea></p>
+      <p>Адрес проживания:<span class="description__streetAddress"></span></p>
+      <p>Город:<span class="description__city"></span></p>
+      <p>Провинция/штат:<span class="description__state"></span></p>
+      <p>Индекс:<span class="description__zip"></span></p>
+  </div>
+  </template>
+
+  <template id="message_error">
+    <section class="message_error">
+      <div class="message_error__container popup_container">
+        <p>Ой... что то пошло не так</p>
+        <p><span class="col errorDesc"></span></p>
+        <p>Подождите немного или</p>
+        <div class="row">
+          <button type="button" class="btn btn-primary btn-lg data_reloaded">Выбрать новую базу</button>
+          <button type="button" class="btn btn-primary btn-lg data_default_load">Загрузить моки</button>
+        </div>
+      </div>
+    </section>
+  </template>
+
 <script src="./lodash.js"></script>
 <script type="module" src="./js/util.js"></script>
 <script type="module" src="./js/load.js"></script>
 <script type="module" src="./js/table.js"></script>
 <script type="module" src="./js/pagination.js"></script>
+<script type="module" src="./js/description.js"></script>
+<script type="module" src="./js/search.js"></script>
+<script type="module" src="./js/navbar-actions.js"></script>
+<script type="module" src="./js/error-message.js"></script>
 <script type="module" src="./js/main.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.min.js"></script>
 </body>
