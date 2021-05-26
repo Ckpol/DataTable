@@ -5,4 +5,13 @@ bootstrap.min.css
 lodash.js
 package-lock.json
 server.js
-
+*.ai
+*.log
+*.pdf
+*.psd
+*.sublime*
+*.ini
+build/
+Thumbs.db
+.vscode/
+origin/
