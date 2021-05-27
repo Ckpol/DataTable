@@ -15,4 +15,4 @@ build/
 Thumbs.db
 .vscode/
 origin/
-./bootstrap-5.0.0-beta2-dist
+.bootstrap-5.0.0-beta2-dist/
